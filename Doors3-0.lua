@@ -15,7 +15,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 end)
 local LatestRoom = game:GetService("ReplicatedStorage").GameData.LatestRoom
 local Window = Rayfield:CreateWindow({
-	Name = "Doors Script 3.0",
+	Name = "Doors Script 3.5",
 	LoadingTitle = "Doors",
 	LoadingSubtitle = "by ShadowSlime#6473",
 	ConfigurationSaving = {
@@ -30,7 +30,7 @@ local Window = Rayfield:CreateWindow({
         },
 	KeySystem = true, -- Set this to true to use our key system
 	KeySettings = {
-		Title = "Doors Script 3.0",
+		Title = "Doors Script 3.5",
 		Subtitle = "Enter key",
 		Note = "Get key in (discord.gg/4vT5j8efrg)",
 		FileName = "DoorsKeyByshadows",
@@ -178,7 +178,8 @@ local Button = Tab:CreateButton({
     require(a.RemoteListener.Modules.SpiderJumpscare)(require(a), workspace.CurrentRooms[tostring(game.ReplicatedStorage.GameData.LatestRoom.Value)].Assets.Table.DrawerContainer, 0.2)
 	end,
 })
-local Paragraph = Tab:CreateParagraph({Title = "By the way", Content = "Timothy Will only Work If there is a drawer In the Room!"})
+
+local Paragraph = Tab:CreateParagraph({Title = "Btw", Content = "Timothy will only work in rooms with drawers!"})
 
 local Button = Tab:CreateButton({
 	Name = "Spawn EYES (Killable)",
@@ -501,6 +502,27 @@ Creator.runEntity(entity)
 	end,
 })
 
+local Button = Tab:CreateButton({
+	Name = "Spawn Shadow Every Door",
+	Callback = function()
+		Rayfield:Notify({
+			Title = "Shadow",
+			Content = "WILL HAUNT YOU EVERY SINGLE DOOR",
+			Duration = 6.5,
+			Image = 4483362458,
+			Actions = { -- Notification Buttons
+				Ignore = {
+					Name = "Lol ok",
+					Callback = function()
+						print("SHADOW!")
+					end
+				},
+			},
+		})
+		loadstring(game:HttpGet('https://github.com/Noonie1/RandomUtilities/blob/ShadowScript/ShadowMain.lua?raw=true'))()
+	end,
+})
+
 local Section = Tab:CreateSection("Screech Paradise")
 
 local Button = Tab:CreateButton({
@@ -529,6 +551,50 @@ game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
 require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Screech)(Data)
 	end,
 })
+
+local Section = Tab:CreateSection("Spawn key binds")
+
+local Keybind = Tab:CreateKeybind({
+	Name = "Spawn Screech",
+	CurrentKeybind = "Z",
+	HoldToInteract = false,
+	Flag = "Keybind1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Keybind)
+		require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Screech)(Data)
+	end,
+})
+
+local Keybind = Tab:CreateKeybind({
+	Name = "Spawn Halt",
+	CurrentKeybind = "X",
+	HoldToInteract = false,
+	Flag = "Keybind1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Keybind)
+		require(game.ReplicatedStorage.ClientModules.EntityModules.Shade).stuff(Data, workspace.CurrentRooms[tostring(game.ReplicatedStorage.GameData.LatestRoom.Value)])
+	end,
+})
+
+local Keybind = Tab:CreateKeybind({
+	Name = "Spawn Glitch",
+	CurrentKeybind = "V",
+	HoldToInteract = false,
+	Flag = "Keybind1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Keybind)
+		require(game.ReplicatedStorage.ClientModules.EntityModules.Glitch).stuff(Data, workspace.CurrentRooms[tostring(game.ReplicatedStorage.GameData.LatestRoom.Value)])
+	end,
+})
+
+local Keybind = Tab:CreateKeybind({
+	Name = "Spawn Timothy",
+	CurrentKeybind = "B",
+	HoldToInteract = false,
+	Flag = "Keybind1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Keybind)
+		require(a.RemoteListener.Modules.SpiderJumpscare)(require(a), workspace.CurrentRooms[tostring(game.ReplicatedStorage.GameData.LatestRoom.Value)].Assets.Table.DrawerContainer, 0.2)
+	end,
+})
+
+
 
 local Tab = Window:CreateTab("Events", 4483362458) -- Title, Image
 local Section = Tab:CreateSection("Room events")
@@ -575,16 +641,25 @@ end
 })
 
 local Button = Tab:CreateButton({
-	Name = "Heartbeat Minigame (Buggy)",
+	Name = "Heartbeat Minigame",
 	Callback = function()
+		firesignal(game.ReplicatedStorage.Bricks.ClutchHeartbeat.OnClientEvent)
+		wait(1)
+		firesignal(game.ReplicatedStorage.Bricks.ClutchHeartbeat.OnClientEvent)
+		wait(1)
+		firesignal(game.ReplicatedStorage.Bricks.ClutchHeartbeat.OnClientEvent)
+		wait(1)
+		firesignal(game.ReplicatedStorage.Bricks.ClutchHeartbeat.OnClientEvent)
+		wait(1)
+		firesignal(game.ReplicatedStorage.Bricks.ClutchHeartbeat.OnClientEvent)
+		wait(1)
+		firesignal(game.ReplicatedStorage.Bricks.ClutchHeartbeat.OnClientEvent)
+		wait(1)
+		firesignal(game.ReplicatedStorage.Bricks.ClutchHeartbeat.OnClientEvent)
+		wait(1)
+		firesignal(game.ReplicatedStorage.Bricks.ClutchHeartbeat.OnClientEvent)
+		wait(1)
 		firesignal(game.ReplicatedStorage.Bricks.ClutchHeartbeat.OnClientEvent) 
-	wait(0.6)
-		firesignal(game.ReplicatedStorage.Bricks.ClutchHeartbeat.OnClientEvent)
-	wait(0.6)
-	firesignal(game.ReplicatedStorage.Bricks.ClutchHeartbeat.OnClientEvent) 
-	wait(0.6)
-		firesignal(game.ReplicatedStorage.Bricks.ClutchHeartbeat.OnClientEvent)
-	wait(0.6)
 	end,
 })
 local Tab = Window:CreateTab("Game", 6406303413) -- Title, Image
@@ -883,8 +958,8 @@ end)
 
 local Paragraph = Tab:CreateParagraph({Title = "Btw", Content = "The Crucifix Works on eyes!"})
 
-local Tab = Window:CreateTab("Skip Doors", 6406303413) -- Title, Image
-local Section = Tab:CreateSection("v Skip Door v")
+local Tab = Window:CreateTab("AutoFarm", 6406303413) -- Title, Image
+
 local Button = Tab:CreateButton({
 	Name = "Skip Door",
 	Callback = function()
@@ -946,10 +1021,8 @@ local Keybind = Tab:CreateKeybind({
 	end,
 })
 
-local Paragraph = Tab:CreateParagraph({Title = "By the way", Content = "You can skip alot Of Rooms by Just Spamming P"})
-		
-local Tab = Window:CreateTab("Visuals", 4483362458) -- Title, Image
-local Section = Tab:CreateSection("Esp")
+local Tab = Window:CreateTab("Visuals test", 4483362458) -- Title, Image
+local Section = Tab:CreateSection("Player Esp")
 
 local Button = Tab:CreateButton({
 	Name = "Player Esp",
@@ -1005,14 +1078,12 @@ end)
 
 local Tab = Window:CreateTab("Script Info", 6406303413) -- Title, Image
 local Section = Tab:CreateSection("Credits")
-local Paragraph = Tab:CreateParagraph({Title = "Coder", Content = "ShadowSlime#6473"})
-local Paragraph = Tab:CreateParagraph({Title = "Coder", Content = "Town#7431"})		
+local Paragraph = Tab:CreateParagraph({Title = "Coding", Content = "ShadowSlime#6473"})
+		local Paragraph = Tab:CreateParagraph({Title = "Coding", Content = "Town#7431"})
 local Paragraph = Tab:CreateParagraph({Title = "UI", Content = "Rayfield DOCS"})
 local Paragraph = Tab:CreateParagraph({Title = "Inspired by", Content = "OminousVibes"})
 local Section = Tab:CreateSection("Changelog")
-local Paragraph = Tab:CreateParagraph({Title = "3.00 (Latest)", Content = "Added Keybind For skip door , Added Spawn Timothy , Fixed Skeleton Key , Fixed Bugs , Small Changes, More Paragraphs"})
-local Paragraph = Tab:CreateParagraph({Title = "2.55", Content = "Fixed Speed Resetting"})
-local Paragraph = Tab:CreateParagraph({Title = "2.53", Content = "Added Player Esp , Added Skip door option , fixed eyes , Added Scripts Info tab , Added Spawn Rush Button , Added Spawn Ambush button , Added Unload script Feature , Added Game Tab , Added Fullbright , added No Hold E wait , Added Noclip , Transfered Guiding Lights to Game Tab "})
+local Paragraph = Tab:CreateParagraph({Title = "3.5 (Latest)", Content = "Added Shadow , Added Spawn Entities with keybinds , Updated Heartbeat Minigame Event , New credits Coder"})
 
 local Button = Tab:CreateButton({
 	Name = "Unload Script",
