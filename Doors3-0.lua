@@ -172,12 +172,13 @@ Creator.runEntity(entity)
 })
 
 local Button = Tab:CreateButton({
-	Name = "Spawn Timothy (Soon)",
+	Name = "Spawn Timothy",
 	Callback = function()
 	local a = game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game
     require(a.RemoteListener.Modules.SpiderJumpscare)(require(a), workspace.CurrentRooms[tostring(game.ReplicatedStorage.GameData.LatestRoom.Value)].Assets.Table.DrawerContainer, 0.2)
 	end,
 })
+local Paragraph = Tab:CreateParagraph({Title = "By the way", Content = "Timothy Will only Work If there is a drawer In the Room!"})
 
 local Button = Tab:CreateButton({
 	Name = "Spawn EYES (Killable)",
@@ -1009,7 +1010,7 @@ local Paragraph = Tab:CreateParagraph({Title = "Coder", Content = "Town#7431"})
 local Paragraph = Tab:CreateParagraph({Title = "UI", Content = "Rayfield DOCS"})
 local Paragraph = Tab:CreateParagraph({Title = "Inspired by", Content = "OminousVibes"})
 local Section = Tab:CreateSection("Changelog")
-local Paragraph = Tab:CreateParagraph({Title = "3.00", Content = "Added Keybind For skip door , Added Spawn Timothy , Fixed Skeleton Key"})
+local Paragraph = Tab:CreateParagraph({Title = "3.00 (Latest)", Content = "Added Keybind For skip door , Added Spawn Timothy , Fixed Skeleton Key , Fixed Bugs , Small Changes, More Paragraphs"})
 local Paragraph = Tab:CreateParagraph({Title = "2.55", Content = "Fixed Speed Resetting"})
 local Paragraph = Tab:CreateParagraph({Title = "2.53", Content = "Added Player Esp , Added Skip door option , fixed eyes , Added Scripts Info tab , Added Spawn Rush Button , Added Spawn Ambush button , Added Unload script Feature , Added Game Tab , Added Fullbright , added No Hold E wait , Added Noclip , Transfered Guiding Lights to Game Tab "})
 
