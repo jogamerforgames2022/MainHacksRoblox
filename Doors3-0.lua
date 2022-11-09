@@ -15,7 +15,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 end)
 local LatestRoom = game:GetService("ReplicatedStorage").GameData.LatestRoom
 local Window = Rayfield:CreateWindow({
-	Name = "Doors Script 3.5",
+	Name = "Doors Script 3.6",
 	LoadingTitle = "Doors",
 	LoadingSubtitle = "by ShadowSlime#6473",
 	ConfigurationSaving = {
@@ -28,9 +28,9 @@ local Window = Rayfield:CreateWindow({
         	Invite = "4vT5j8efrg", -- The Discord invite code, do not include discord.gg/
         	RememberJoins = false -- Set this to false to make them join the discord every time they load it up
         },
-	KeySystem = true, -- Set this to true to use our key system
+	KeySystem = false, -- Set this to true to use our key system
 	KeySettings = {
-		Title = "Doors Script 3.5",
+		Title = "Doors Script 3.6",
 		Subtitle = "Enter key",
 		Note = "Get key in (discord.gg/4vT5j8efrg)",
 		FileName = "DoorsKeyByshadows",
@@ -42,8 +42,8 @@ local Window = Rayfield:CreateWindow({
 
 Rayfield:Notify({
     Title = "Doors script By ShadowSlime#6473",
-    Content = "Have a great time!",
-    Duration = 10.5,
+    Content = "Join our discord discord.gg/4vT5j8efrg For more!",
+    Duration = 1,
     Image = 5962561114,
     Actions = { -- Notification Buttons
         Ignore = {
@@ -1083,7 +1083,8 @@ local Paragraph = Tab:CreateParagraph({Title = "Coding", Content = "ShadowSlime#
 local Paragraph = Tab:CreateParagraph({Title = "UI", Content = "Rayfield DOCS"})
 local Paragraph = Tab:CreateParagraph({Title = "Inspired by", Content = "OminousVibes"})
 local Section = Tab:CreateSection("Changelog")
-local Paragraph = Tab:CreateParagraph({Title = "3.5 (Latest)", Content = "Added Shadow , Added Spawn Entities with keybinds , Updated Heartbeat Minigame Event , New credits Coder"})
+		local Paragraph = Tab:CreateParagraph({Title = "3.6 (Latest)", Content = "Removed Key system Cuz it was requested"})
+local Paragraph = Tab:CreateParagraph({Title = "3.5", Content = "Added Shadow , Added Spawn Entities with keybinds , Updated Heartbeat Minigame Event , New credits Coder"})
 
 local Button = Tab:CreateButton({
 	Name = "Unload Script",
