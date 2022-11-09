@@ -15,7 +15,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 end)
 local LatestRoom = game:GetService("ReplicatedStorage").GameData.LatestRoom
 local Window = Rayfield:CreateWindow({
-	Name = "Doors Script 2.53",
+	Name = "Doors Script 2.55",
 	LoadingTitle = "Doors",
 	LoadingSubtitle = "by ShadowSlime#6473",
 	ConfigurationSaving = {
@@ -30,7 +30,7 @@ local Window = Rayfield:CreateWindow({
         },
 	KeySystem = true, -- Set this to true to use our key system
 	KeySettings = {
-		Title = "Doors Script 2.53",
+		Title = "Doors Script 2.55",
 		Subtitle = "Enter key",
 		Note = "Get key in (discord.gg/4vT5j8efrg)",
 		FileName = "DoorsKeyByshadows",
@@ -742,14 +742,17 @@ local Section = Tab:CreateSection("Other")
 
 local Slider = Tab:CreateSlider({
 	Name = "Speed",
-	Range = {0, 69},
+	Range = {10, 69},
 	Increment = 1,
 	Suffix = "Walkspeed",
-	CurrentValue = 10,
+	CurrentValue = 16,
 	Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
 	Callback = function(Value)
+while true do
+wait()
 		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
-	end,
+	end
+end,
 })
 
 local Button = Tab:CreateButton({
@@ -964,9 +967,9 @@ local Paragraph = Tab:CreateParagraph({Title = "Coding", Content = "ShadowSlime"
 local Paragraph = Tab:CreateParagraph({Title = "UI", Content = "Rayfield DOCS"})
 local Paragraph = Tab:CreateParagraph({Title = "Inspired by", Content = "OminousVibes"})
 local Section = Tab:CreateSection("Changelog")
+local Paragraph = Tab:CreateParagraph({Title = "2.55", Content = "Fixed Speed Resetting"})
 local Paragraph = Tab:CreateParagraph({Title = "2.53", Content = "Added Player Esp , Added Skip door option , fixed eyes , Added Scripts Info tab , Added Spawn Rush Button , Added Spawn Ambush button , Added Unload script Feature , Added Game Tab , Added Fullbright , added No Hold E wait , Added Noclip , Transfered Guiding Lights to Game Tab "})
 local Paragraph = Tab:CreateParagraph({Title = "2.02", Content = "Added (Spawn Eyes) Button , Added Crucifix (Works with Script Eyes) , Added LocalPlayer Tab , Updated Guiding Light Gen"})
-local Paragraph = Tab:CreateParagraph({Title = "1.00", Content = "Added Spawnables , Added Events"})
 
 local Button = Tab:CreateButton({
 	Name = "Unload Script",
