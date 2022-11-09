@@ -15,7 +15,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 end)
 local LatestRoom = game:GetService("ReplicatedStorage").GameData.LatestRoom
 local Window = Rayfield:CreateWindow({
-	Name = "Doors Script 2.55",
+	Name = "Doors Script 3.0",
 	LoadingTitle = "Doors",
 	LoadingSubtitle = "by ShadowSlime#6473",
 	ConfigurationSaving = {
@@ -30,7 +30,7 @@ local Window = Rayfield:CreateWindow({
         },
 	KeySystem = true, -- Set this to true to use our key system
 	KeySettings = {
-		Title = "Doors Script 2.55",
+		Title = "Doors Script 3.0",
 		Subtitle = "Enter key",
 		Note = "Get key in (discord.gg/4vT5j8efrg)",
 		FileName = "DoorsKeyByshadows",
@@ -577,6 +577,13 @@ local Button = Tab:CreateButton({
 	Name = "Heartbeat Minigame (Buggy)",
 	Callback = function()
 		firesignal(game.ReplicatedStorage.Bricks.ClutchHeartbeat.OnClientEvent) 
+	wait(0.6)
+		firesignal(game.ReplicatedStorage.Bricks.ClutchHeartbeat.OnClientEvent)
+	wait(0.6)
+	firesignal(game.ReplicatedStorage.Bricks.ClutchHeartbeat.OnClientEvent) 
+	wait(0.6)
+		firesignal(game.ReplicatedStorage.Bricks.ClutchHeartbeat.OnClientEvent)
+	wait(0.6)
 	end,
 })
 local Tab = Window:CreateTab("Game", 6406303413) -- Title, Image
@@ -875,8 +882,8 @@ end)
 
 local Paragraph = Tab:CreateParagraph({Title = "Btw", Content = "The Crucifix Works on eyes!"})
 
-local Tab = Window:CreateTab("AutoFarm", 6406303413) -- Title, Image
-
+local Tab = Window:CreateTab("Skip Doors", 6406303413) -- Title, Image
+local Section = Tab:CreateSection("v Skip Door v")
 local Button = Tab:CreateButton({
 	Name = "Skip Door",
 	Callback = function()
@@ -938,8 +945,10 @@ local Keybind = Tab:CreateKeybind({
 	end,
 })
 
-local Tab = Window:CreateTab("Visuals test", 4483362458) -- Title, Image
-local Section = Tab:CreateSection("Player Esp")
+local Paragraph = Tab:CreateParagraph({Title = "By the way", Content = "You can skip alot Of Rooms by Just Spamming P"})
+		
+local Tab = Window:CreateTab("Visuals", 4483362458) -- Title, Image
+local Section = Tab:CreateSection("Esp")
 
 local Button = Tab:CreateButton({
 	Name = "Player Esp",
@@ -995,13 +1004,14 @@ end)
 
 local Tab = Window:CreateTab("Script Info", 6406303413) -- Title, Image
 local Section = Tab:CreateSection("Credits")
-local Paragraph = Tab:CreateParagraph({Title = "Coding", Content = "ShadowSlime"})
+local Paragraph = Tab:CreateParagraph({Title = "Coder", Content = "ShadowSlime#6473"})
+local Paragraph = Tab:CreateParagraph({Title = "Coder", Content = "Town#7431"})		
 local Paragraph = Tab:CreateParagraph({Title = "UI", Content = "Rayfield DOCS"})
 local Paragraph = Tab:CreateParagraph({Title = "Inspired by", Content = "OminousVibes"})
 local Section = Tab:CreateSection("Changelog")
+local Paragraph = Tab:CreateParagraph({Title = "3.00", Content = "Added Keybind For skip door , Added Spawn Timothy , Fixed Skeleton Key"})
 local Paragraph = Tab:CreateParagraph({Title = "2.55", Content = "Fixed Speed Resetting"})
 local Paragraph = Tab:CreateParagraph({Title = "2.53", Content = "Added Player Esp , Added Skip door option , fixed eyes , Added Scripts Info tab , Added Spawn Rush Button , Added Spawn Ambush button , Added Unload script Feature , Added Game Tab , Added Fullbright , added No Hold E wait , Added Noclip , Transfered Guiding Lights to Game Tab "})
-local Paragraph = Tab:CreateParagraph({Title = "2.02", Content = "Added (Spawn Eyes) Button , Added Crucifix (Works with Script Eyes) , Added LocalPlayer Tab , Updated Guiding Light Gen"})
 
 local Button = Tab:CreateButton({
 	Name = "Unload Script",
