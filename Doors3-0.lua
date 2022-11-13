@@ -3,6 +3,8 @@ local Data = require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Ga
 local CF = CFrame.new
 local ProximityPromptService = game:GetService("ProximityPromptService")
 local Players = game:GetService("Players"):GetChildren()
+local EntitySpawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/jogamerforgames2022/MainHacksRoblox/main/Seek.lua"))()
+local Configuration = {}
 local RunService = game:GetService("RunService")
 local highlight = Instance.new("Highlight")
 highlight.Name = "Highlight"
@@ -15,7 +17,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 end)
 local LatestRoom = game:GetService("ReplicatedStorage").GameData.LatestRoom
 local Window = Rayfield:CreateWindow({
-	Name = "Doors Script 3.6",
+	Name = "Doors Script 4.0",
 	LoadingTitle = "Doors",
 	LoadingSubtitle = "by ShadowSlime#6473",
 	ConfigurationSaving = {
@@ -30,7 +32,7 @@ local Window = Rayfield:CreateWindow({
         },
 	KeySystem = false, -- Set this to true to use our key system
 	KeySettings = {
-		Title = "Doors Script 3.6",
+		Title = "Doors Script 4.0",
 		Subtitle = "Enter key",
 		Note = "Get key in (discord.gg/4vT5j8efrg)",
 		FileName = "DoorsKeyByshadows",
@@ -523,6 +525,18 @@ local Button = Tab:CreateButton({
 	end,
 })
 
+	
+
+			
+local Button = Tab:CreateButton({
+	Name = "Spawn Seek",
+	Callback = function()
+					
+	end,
+
+})
+		
+		
 local Section = Tab:CreateSection("Screech Paradise")
 
 local Button = Tab:CreateButton({
