@@ -525,16 +525,6 @@ local Button = Tab:CreateButton({
 	end,
 })
 
-	
-
-			
-local Button = Tab:CreateButton({
-	Name = "Spawn Seek",
-	Callback = function()
-					
-	end,
-
-})
 		
 		
 local Section = Tab:CreateSection("Screech Paradise")
