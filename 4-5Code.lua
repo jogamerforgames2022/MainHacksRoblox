@@ -19,8 +19,8 @@ game:GetService("RunService").RenderStepped:Connect(function()
 end)
 local LatestRoom = game:GetService("ReplicatedStorage").GameData.LatestRoom
 local Window = Rayfield:CreateWindow({
-	Name = "Doors Script 4.5",
-	LoadingTitle = "Doors 4.5",
+	Name = "Doors Script 4.8",
+	LoadingTitle = "Doors 4.8",
 	LoadingSubtitle = "by Shadows's Scripts",
 	ConfigurationSaving = {
 		Enabled = true,
@@ -34,13 +34,13 @@ local Window = Rayfield:CreateWindow({
         },
 	KeySystem = true, -- Set this to true to use our key system
 	KeySettings = {
-		Title = "Doors Script 4.5",
+		Title = "Doors Script 4.8",
 		Subtitle = "Enter key",
 		Note = "Get key in (discord.gg/4vT5j8efrg)",
 		FileName = "ShadowDoorsKey",
 		SaveKey = true,
 		GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-		Key = "shadow"
+		Key = "milk"
 	}
 })
 
@@ -1378,6 +1378,7 @@ Creator.runEntity(entity)
 	end,
 })
 
+--Not Spawners start here
 local Tab = Window:CreateTab("Events", 4483362458) -- Title, Image
 local Section = Tab:CreateSection("Room events")
 
@@ -1420,6 +1421,11 @@ end)
 	end,
 })
 
+local CustomAchVTitle = "Title Name"
+local CustomAchVDesc = "Thanks for using Shadow's script"
+local CustomAchVReas = "you hack"
+local CustomAchVImageL = "https://img.icons8.com/windows/512/exclamation-mark.png"
+
 local Button = Tab:CreateButton({
 	Name = "Get all badges",
 	Callback = function()
@@ -1428,20 +1434,6 @@ local Button = Tab:CreateButton({
         require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.AchievementUnlock)(nil, i)
     end)
 end
-	end,
-})
-
-local Input = Tab:CreateInput({
-	Name = "Custom Achievement",
-	PlaceholderText = "Name",
-	RemoveTextAfterFocusLost = true,
-	Callback = function(Text)
-		Achievements.Get({
-    Title = (Text),
-    Desc = "Thanks for using ShadowSlime#6473's",
-    Reason = "Custom Achievement Generator!",
-    Image = "https://img.icons8.com/windows/512/exclamation-mark.png",
-})
 	end,
 })
 
@@ -1467,6 +1459,61 @@ local Button = Tab:CreateButton({
 		firesignal(game.ReplicatedStorage.Bricks.ClutchHeartbeat.OnClientEvent) 
 	end,
 })
+
+local Section = Tab:CreateSection("Custom Achievement Creator")
+
+local Input = Tab:CreateInput({
+	Name = "Title",
+	PlaceholderText = "Title Here",
+	RemoveTextAfterFocusLost = false,
+	Callback = function(Text)
+		CustomAchVTitle = (Text)
+	end,
+})
+
+local Input = Tab:CreateInput({
+	Name = "Description",
+	PlaceholderText = "Description here",
+	RemoveTextAfterFocusLost = false,
+	Callback = function(Text)
+		CustomAchVDesc = (Text)
+	end,
+})
+
+local Input = Tab:CreateInput({
+	Name = "Reason",
+	PlaceholderText = "The Reason Here",
+	RemoveTextAfterFocusLost = false,
+	Callback = function(Text)
+		CustomAchVReas = (Text)
+	end,
+})
+
+local Input = Tab:CreateInput({
+	Name = "Image",
+	PlaceholderText = "Imagine (Link) Here",
+	RemoveTextAfterFocusLost = false,
+	Callback = function(Text)
+		CustomAchVImageL = (Text)
+	end,
+})
+
+local Paragraph = Tab:CreateParagraph({Title = "Note!", Content = "The Image Must be A Link! it can be from any website"})
+
+local Button = Tab:CreateButton({
+	Name = "Begin",
+	Callback = function()
+wait(2)
+		Achievements.Get({
+    Title = CustomAchVTitle,
+    Desc = CustomAchVDesc,
+    Reason = CustomAchVReas,
+    Image = CustomAchVImageL,
+})
+	end,
+})
+
+
 local Tab = Window:CreateTab("Game", 6406303413) -- Title, Image
 local Button = Tab:CreateButton({
 	Name = "Fullbright",
@@ -1600,21 +1647,88 @@ local Input = Tab:CreateInput({
 
 local Section = Tab:CreateSection("Guiding Light")
 
-local Input = Tab:CreateInput({
-	Name = "Guiding Light Message",
-	PlaceholderText = "Message",
-	RemoveTextAfterFocusLost = false,
-	Callback = function(Text)
-		firesignal(game.ReplicatedStorage.Bricks.DeathHint.OnClientEvent, {(Text),"Thanks for using ShadowSlime#6473's Guiding Lights generator! "})
-	end,
-})
+local M1 = nil
+local M2 = nil
+local M3 = nil
+local M4 = nil
+local M5 = nil
+local M6 = nil
+local M7 = nil
+
 
 local Button = Tab:CreateButton({
-	Name = "Start",
+	Name = "Start Guiding Light",
 	Callback = function()
+firesignal(game.ReplicatedStorage.Bricks.DeathHint.OnClientEvent, {M1,M2,M3,M4,M5,M6,M7})
 		game.Players.LocalPlayer.Character.Humanoid.Health = 0
 	end,
 })
+
+local Paragraph = Tab:CreateParagraph({Title = "Note!", Content = "Leave a message Blank if you Dont want it"})
+
+local Input = Tab:CreateInput({
+	Name = "Message 1",
+	PlaceholderText = "Message",
+	RemoveTextAfterFocusLost = false,
+	Callback = function(Text)
+M1 = (Text)
+	end,
+})
+
+local Input = Tab:CreateInput({
+	Name = "Message 2",
+	PlaceholderText = "Message",
+	RemoveTextAfterFocusLost = false,
+	Callback = function(Text)
+M2 = (Text)
+	end,
+})
+
+local Input = Tab:CreateInput({
+	Name = "Message 3",
+	PlaceholderText = "Message",
+	RemoveTextAfterFocusLost = false,
+	Callback = function(Text)
+M3 = (Text)
+	end,
+})
+
+local Input = Tab:CreateInput({
+	Name = "Message 4",
+	PlaceholderText = "Message",
+	RemoveTextAfterFocusLost = false,
+	Callback = function(Text)
+M4 = (Text)
+	end,
+})
+
+local Input = Tab:CreateInput({
+	Name = "Message 5",
+	PlaceholderText = "Message",
+	RemoveTextAfterFocusLost = false,
+	Callback = function(Text)
+M5 = (Text)
+	end,
+})
+
+local Input = Tab:CreateInput({
+	Name = "Message 6",
+	PlaceholderText = "Message",
+	RemoveTextAfterFocusLost = false,
+	Callback = function(Text)
+M6 = (Text)
+	end,
+})
+
+local Input = Tab:CreateInput({
+	Name = "Message 7",
+	PlaceholderText = "Message",
+	RemoveTextAfterFocusLost = false,
+	Callback = function(Text)
+M7 = (Text)
+	end,
+})
+
 
 local Tab = Window:CreateTab("LocalPlayer", 4483362458) -- Title, Image
 local Section = Tab:CreateSection("Health")
@@ -1850,7 +1964,8 @@ local Paragraph = Tab:CreateParagraph({Title = "Coding", Content = "ShadowSlime#
 local Paragraph = Tab:CreateParagraph({Title = "UI", Content = "Rayfield DOCS"})
 local Paragraph = Tab:CreateParagraph({Title = "Inspired by", Content = "OminousVibes"})
 local Section = Tab:CreateSection("Changelog")
-local Paragraph = Tab:CreateParagraph({Title = "4.5 (Latest)", Content = "Added Gun, Custom Achievement, Added Custom Entities, Added A-60, Added Train, Added Figure (Troll), Added Red Room every Door, Re-Added The key System, Fixed Bugs, Added Client Discord Inviter"})
+local Paragraph = Tab:CreateParagraph({Title = "4.8 (Latest)", Content = "Updated Guiding Light Generator, Updated Achievements Creator, Added a Vault"})
+local Paragraph = Tab:CreateParagraph({Title = "4.5", Content = "Added Gun, Custom Achievement, Added Custom Entities, Added A-60, Added Train, Added Figure (Troll), Added Red Room every Door, Re-Added The key System, Fixed Bugs, Added Client Discord Inviter"})
 local Paragraph = Tab:CreateParagraph({Title = "4.0", Content = "Added Spawn Seek, Added Custom message, Added NonKillable Rush, Added NonKillable Ambush, Fixed Timothy, Fixed Call back error"})
 		local Paragraph = Tab:CreateParagraph({Title = "3.6", Content = "Removed Key system Cuz it was requested"})
 local Paragraph = Tab:CreateParagraph({Title = "3.5", Content = "Added Shadow , Added Spawn Entities with keybinds , Updated Heartbeat Minigame Event , New credits Coder"})
@@ -1871,7 +1986,23 @@ local Button = Tab:CreateButton({
      Rayfield:Destroy()
 	end,
 })
-
+local Section = Tab:CreateSection("Vault (Locked)")
+local Paragraph = Tab:CreateParagraph({Title = "Vault Status", Content = "Locked"})
+local SecretTokenForScriptPremium = nil
+local Input = Tab:CreateInput({
+	Name = "Vault",
+	PlaceholderText = "Insert Password",
+	RemoveTextAfterFocusLost = true,
+	Callback = function(Text)
+		SecretTokenForScriptPremium = (Text)
+if SecretTokenForScriptPremium == "ShadowSlimeIsTheBestMfInTheWorld" then
+Paragraph:Set({Title = "Vault Status", Content = "UNLOCKED!"})
+Section:Set("Vault (UNLOCKED)")
+print("Code is Correct")
+end
+	end,
+})
+local Paragraph = Tab:CreateParagraph({Title = "Btw", Content = "First one to Open this Vault Is Going to have A Prize!"}) 
 
 local Tab = Window:CreateTab("ESP", 4483362458) -- Title, Image
 local Button = Tab:CreateButton({
